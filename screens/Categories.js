@@ -3,13 +3,16 @@ import { CATEGORIES } from "../data/dummydata";
 
 import React from "react";
 import CategoryGridTile from "../components/CategoryGridTile";
+import Category from "../models/category";
 
 function Categories({ navigation }) {
-  function pressHandler() {
-    navigation.navigate("Meals Overview");
-  }
-
   function renderCategoryItem({ item }) {
+    function pressHandler() {
+      navigation.navigate("Meals Overview", {
+        categoryId: item.id,
+      });
+    }
+
     return (
       <CategoryGridTile
         title={item.title}
