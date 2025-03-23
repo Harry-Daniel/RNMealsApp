@@ -4,11 +4,21 @@ import { CATEGORIES } from "../data/dummydata";
 import React from "react";
 import CategoryGridTile from "../components/CategoryGridTile";
 
-function renderCategoryItem({ item }) {
-  return <CategoryGridTile title={item.title} color={item.color} />;
-}
+function Categories({ navigation }) {
+  function pressHandler() {
+    navigation.navigate("Meals Overview");
+  }
 
-function Categories() {
+  function renderCategoryItem({ item }) {
+    return (
+      <CategoryGridTile
+        title={item.title}
+        color={item.color}
+        onPress={pressHandler}
+      />
+    );
+  }
+
   return (
     <FlatList
       data={CATEGORIES}
