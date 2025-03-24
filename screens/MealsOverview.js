@@ -9,7 +9,10 @@ const MealsOverview = ({ route }) => {
   });
 
   function renderMealItem({item}){
-    return <MealItem title={item.title}/>
+    return <MealItem title={item.title} imageUrl={item.imageUrl}
+    affordability={item.affordability} complexity={item.complexity}
+    duration={item.duration}
+    />
   }
 
 
