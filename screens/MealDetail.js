@@ -1,10 +1,10 @@
-import { Button, Image, ScrollView, StyleSheet, Text, View } from "react-native";
-import React from "react";
-import { useLayoutEffect } from "react";
-import { MEALS } from "../data/dummydata";
-import MealDetails from "../components/MealDetails";
-import Subtitle from "../components/MealDetail/Subtitle";
+import React, { useLayoutEffect } from "react";
+import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
+import IconButton from "../components/IconButton";
 import List from "../components/MealDetail/List";
+import Subtitle from "../components/MealDetail/Subtitle";
+import MealDetails from "../components/MealDetails";
+import { MEALS } from "../data/dummydata";
 
 const MealDetail = ({ route,navigation }) => {
   const mealId = route.params.categoryId;
@@ -17,7 +17,7 @@ const MealDetail = ({ route,navigation }) => {
   useLayoutEffect(()=>{
     navigation.setOptions({
       headerRight:()=>{
-        return <Button title="Tap me" onPress={headerButtonPressHandler}/>
+        return <IconButton icon={'star'} color='white' onPress={headerButtonPressHandler}/>
       }
     })
   },[navigation,headerButtonPressHandler])
